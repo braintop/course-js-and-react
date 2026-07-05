@@ -4,6 +4,8 @@ import About from './Pages/About'
 import Products from './Pages/Products'
 import NotFound from './Pages/NotFound'
 import Navbar from './Components/Navbar'
+import UserList from './Components/UserList'
+import SelectedUser from './Components/SelectedUser'
 function App() {
 
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/users/:id" element={<SelectedUser />} />
+        <Route path="/users" element={<UserList />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

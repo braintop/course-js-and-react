@@ -4,6 +4,9 @@ import Notification from './Notification';
 import UsersList from './UsersList';
 import TaskList from './TaskList';
 import TodoApp from './TodoApp';
+import { Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import Navbar from './Navbar';
 function App() {
   const items = [
     <li key="1">Apple</li>,
@@ -14,16 +17,16 @@ function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
-      <Counter initialCount={0} />
-      <StatusBadge initialIsOnline={true} />
-      <Notification initialCount={0} />
-
-      <ol>{items}</ol>
-      <ul>{fruits.map((fruit,index) => <li  key={index} style={{ color: 'red', fontWeight: 'bold' }}>{fruit}</li>)}</ul>
-      <UsersList />
-      <TaskList />
-      <TodoApp />
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/counter" element={<Counter />} />
+      <Route path="/status-badge" element={<StatusBadge />} />
+      <Route path="/notification" element={<Notification />} />
+      <Route path="/users-list" element={<UsersList />} />
+      <Route path="/task-list" element={<TaskList />} />
+      <Route path="/todo-app" element={<TodoApp />} />
+    </Routes>
     </>
   )
 }
