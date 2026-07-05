@@ -5,7 +5,6 @@ export default function Counter(props) {
     function addOne() {
         //count++;
         setCount(count + 1);
-        //alert(`Count: ${count}`);
     }
 
 

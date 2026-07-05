@@ -10,7 +10,7 @@ export default function Input() {
         <div>
             <h1>Input</h1>
 
-            <input type="text" placeholder="Enter your name" onChange={handleChange}/>
+            <input  type="text" placeholder="Enter your name" onChange={handleChange}/>
 
             <p>{text}</p>
         </div>

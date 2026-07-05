@@ -10,6 +10,8 @@ function App() {
     <>
         <h1>Hello World</h1>
         <Counter name="John" />
+        <Counter name="Asaf" />
+
         <Toggle />
         <ToggleText />
 
