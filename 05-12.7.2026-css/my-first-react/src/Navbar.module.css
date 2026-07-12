@@ -1,0 +1,121 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(16px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  width: min(960px, calc(100% - 2rem));
+  margin: 0 auto;
+  min-height: 4.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  color: var(--text-h);
+  margin-right: auto;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.link:hover {
+  color: var(--text-h);
+  background: var(--accent-soft);
+}
+
+.active {
+  color: var(--text-h);
+  background: var(--accent-soft);
+}
+
+.themeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid var(--border);
+  background: var(--surface-solid);
+  color: var(--text-h);
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.themeBtn:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.themeBtn:active {
+  transform: scale(0.97);
+}
+
+.themeIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  transition: transform 0.35s ease;
+}
+
+.themeBtn:hover .themeIcon {
+  transform: rotate(18deg);
+}
+
+@media (max-width: 640px) {
+  .inner {
+    flex-wrap: wrap;
+    padding: 0.75rem 0;
+  }
+
+  .brand {
+    margin-right: 0;
+  }
+
+  .themeBtn {
+    margin-left: auto;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .themeLabel {
+    display: none;
+  }
+}

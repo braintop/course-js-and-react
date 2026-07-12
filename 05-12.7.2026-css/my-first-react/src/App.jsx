@@ -1,31 +1,46 @@
+import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Post from './Post/Post'
 import User from './User/User'
-import Card from './Card'
-import StatusBadge from './StatusBadge'
+import Home from './Home'
+import { Navbar } from './Navbar'
 import UserContext from './Context/UserContext'
-import { useState } from 'react'
-function App() {
+import ThemeContext from './Context/ThemeContext'
+import styles from './App.module.css'
 
+function App() {
+  const [theme, setTheme] = useState('light')
   const [user, setUser] = useState({
     name: 'John',
     age: 30,
-    email: 'john@example.com'
+    email: 'john@example.com',
   })
-  function foo(){
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
+
+  function foo() {
     console.log('foo')
   }
+
   return (
-    <>
-      <UserContext.Provider value={{user, setUser,x:10,y:20,foo}}>
-        <h1 style={{ color: 'red', fontSize: '20px', fontWeight: 'bold' }}>Hello World</h1>
-        <Post />
-        <User />
-        <Card />
-      </UserContext.Provider>
-      <StatusBadge isActive={true} />
-
-
-    </>
+    <BrowserRouter>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
+        <UserContext.Provider value={{ user, setUser, x: 10, y: 20, foo }}>
+          <div className={styles.shell}>
+            <Navbar />
+            <main className={styles.main}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/user" element={<User />} />
+                <Route path="/posts" element={<Post />} />
+              </Routes>
+            </main>
+          </div>
+        </UserContext.Provider>
+      </ThemeContext.Provider>
+    </BrowserRouter>
   )
 }
 

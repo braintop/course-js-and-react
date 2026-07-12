@@ -1,0 +1,54 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  transition: padding 0.35s ease, border-radius 0.35s ease, box-shadow 0.35s ease,
+    background 0.35s ease, transform 0.35s ease;
+  animation: fadeUp 0.55s ease both;
+}
+
+.emphasized {
+  padding: 2rem;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  background: linear-gradient(165deg, var(--accent-soft), var(--surface-solid) 55%);
+  transform: translateY(-2px);
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.body {
+  color: var(--muted);
+}
+
+.button {
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.15rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: scale(0.98);
+}

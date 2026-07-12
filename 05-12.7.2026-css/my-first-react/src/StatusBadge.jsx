@@ -1,17 +1,24 @@
-import { useState } from 'react';
+import { useState } from 'react'
+import styles from './StatusBadge.module.css'
+
 function StatusBadge({ isActive }) {
-    const [showBadge, setShowBadge] = useState(isActive);
-    return (
-      <span style={{
-        color: showBadge ? 'green' : 'red',
-        fontWeight: 'bold',
-        padding: '4px 12px',
-        borderRadius: '12px',
-        backgroundColor: showBadge ? '#e6ffe6' : '#ffe6e6',
-      }}>
-        {showBadge ? 'Active' : 'Inactive'} 
-        <button onClick={() => setShowBadge(!showBadge)}>Change Status</button>
+  const [showBadge, setShowBadge] = useState(isActive)
+
+  return (
+    <div className={styles.wrap}>
+      <span className={`${styles.badge} ${showBadge ? styles.active : styles.inactive}`}>
+        <span className={styles.dot} />
+        {showBadge ? 'Active' : 'Inactive'}
       </span>
-    )
-  }
-  export default StatusBadge;
+      <button
+        type="button"
+        className={styles.toggle}
+        onClick={() => setShowBadge((v) => !v)}
+      >
+        Change status
+      </button>
+    </div>
+  )
+}
+
+export default StatusBadge
