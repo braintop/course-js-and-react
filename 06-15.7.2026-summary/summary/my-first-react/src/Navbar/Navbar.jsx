@@ -5,15 +5,15 @@ export default function Navbar() {
     return (
         <nav className={styles.navbar}>
             <div className={styles.brand}>
-                <span>🌸</span>
+                <span>⭐</span>
                 Flower Shop
-                <span>🌺</span>
+                <span>❤️</span>
             </div>
             <div className={styles.links}>
-                <Link className={styles.link} to="/">🏠 Home</Link>
-                <Link className={styles.link} to="/products">🌷 Products</Link>
-                <Link className={styles.link} to="/about">🌼 About</Link>
-                <Link className={styles.link} to="/add-product">🌹 Add Product</Link>
+                <Link className={styles.link} to="/">⭐ Home</Link>
+                <Link className={styles.link} to="/products">💖 Products</Link>
+                <Link className={styles.link} to="/about">🌟 About</Link>
+                <Link className={styles.link} to="/add-product">💕 Add Product</Link>
             </div>
         </nav>
     )
